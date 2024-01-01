@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
 
-export default class NewsItem extends Component {
+export class NewsItem extends Component {
   render() {
+    let {title,description,imgUrl,newsUrl} = this.props;
     return (
         <div className="card" style={{width: "18rem",margin:"auto",marginTop:"20px",border:"1px solid grey"}}>
-        <img className="card-img-top" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="Card image cap"/>
-        <div className="card-body">
-          <h5 className="card-title">News title</h5>
-          <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="/" className="btn btn-secondary">Visit Page</a>
+        <img className="card-img-top" style={{height:"180px"}} src={imgUrl} alt="Cardcap"/>
+        <div className="card-body" style={{height:"320px"}}>
+          <h5 className="card-title">{title}</h5>
+          <p className="card-text">{description}</p>
+          <a href={newsUrl} rel="noreferrer" target="_blank" className="btn btn-secondary">Visit Page</a>
         </div>
       </div>
     )
   }
 }
+
+export default NewsItem
