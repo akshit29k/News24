@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import LoaderGif from '../loading.gif';
 
-export default class Loader extends Component {
-  render() {
+export default function Loader() { 
     return (
       <div>
        <img src={LoaderGif} alt="loader" />
       </div>
     )
-  }
+  
 }
