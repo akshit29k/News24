@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
     Link
 } from "react-router-dom";
+import CountryContext from '../context/cntryContext';
 
 export default function Navbar() {
-   
+    const context = useContext(CountryContext);
         return (
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
                 <h2 className="navTitle" to="/">News24</h2>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -14,7 +15,7 @@ export default function Navbar() {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li>
-                            <Link className="navMenu" to="/">Home <span className="sr-only">(current)</span></Link>
+                            <Link className="navMenu" to="/">Home</Link>
                         </li>
                         <li>
                             <Link className="navCat" to="/General">General</Link>
@@ -38,20 +39,20 @@ export default function Navbar() {
                             <Link className="navCat" to="/technology">Technology</Link>
                         </li>
                     </ul>
-                </div>
-                <div id="mainul"><ul style={{marginBottom:"0px"}} >
-                    <li  className="countrydrop" id="cntry"><span id="cntryicon">Country &#11163;</span>
+                <div ><ul id="mainul" style={{marginBottom:"0px"}} >
+                    <li  className="countrydrop" id="cntry"><div id="cntryicon">Country &#11163;</div>
                         <ul className="dropdown">
-                            <li className="countrydrop dropli"><a href="/">India</a></li>
-                            <li className="countrydrop dropli"><a href="/">America</a></li>
-                            <li className="countrydrop dropli"><a href="/">China</a></li>
-                            <li className="countrydrop dropli"><a href="/">Australia</a></li>
-                            <li className="countrydrop dropli"><a href="/">Japan</a></li>
-                            <li className="countrydrop dropli"><a href="/">Italy</a></li>
-                            <li className="countrydrop dropli"><a href="/">Mexico</a></li>
+                            <button className="countrydrop dropli" onClick={()=>{context.setState({"country":"in"})}}>India</button>
+                            <button className="countrydrop dropli" onClick={()=>{context.setState({"country":"us"})}}>America</button>
+                            <button className="countrydrop dropli" onClick={()=>{context.setState({"country":"mx"})}}>Mexico</button>
+                            <button className="countrydrop dropli" onClick={()=>{context.setState({"country":"cn"})}}>China</button>
+                            <button className="countrydrop dropli" onClick={()=>{context.setState({"country":"au"})}}>Australia</button>
+                            <button className="countrydrop dropli" onClick={()=>{context.setState({"country":"jp"})}}>Japan</button>
+                            <button className="countrydrop dropli" onClick={()=>{context.setState({"country":"fr"})}}>Korea</button>
                         </ul>
                     </li>
                 </ul></div>
+                </div>
             </nav>
         )
     

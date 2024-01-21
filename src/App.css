@@ -38,7 +38,7 @@
 }
 .navCat{
   color: white;
-  padding: 10px;
+  padding-left:  10px;
   font-size: 20px;
   font-family: sans-serif;
   margin-left: 10px;
@@ -91,16 +91,22 @@ padding-left: 0;
   padding-top: 20px;
   box-shadow: 0px 3px 5px -1px #ccc;
   z-index: 1;
+  padding: 5px;
+  padding-bottom: 0px;
+  padding-top: 20px;
 }
 .dropli{
-  clear: both;
-      width: 100%;
-      text-align: left;
-      margin-bottom: 20px;
-      border-style: none;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  border-style: none;
+  border-radius: 10px;
+  background-color: #5a6672;
+  color: white;
+      
 }
-.dropli a:hover{
-    padding-left: 10px;
+.dropli:hover{
+    padding-left: 20px;
     border-left: 2px solid #3ca0e7;
     transition: all 0.3s ease;
   
@@ -113,11 +119,23 @@ padding-left: 0;
 }
 #cntryicon{
   color: white;
-  padding: 10px;
   font-size: 20px;
   font-family: sans-serif;
   margin-left: 10px;
+  width: max-content;
 }
 #cntry:hover{
   left: 10px;
+}
+
+@media screen and (max-width: 1055px)
+{
+  #mainul{
+    padding-left: 10px;
+    margin-left: 10px;
+  }
+    .navCat{
+      padding-left: 7px;
+      margin-left: 7px;
+    }
 }
